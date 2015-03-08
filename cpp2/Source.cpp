@@ -1,6 +1,8 @@
 #include <iostream>
 #include <irrlicht.h>
 #include <irrKlang.h>
+#include "btBulletCollisionCommon.h"
+#include "btBulletDynamicsCommon.h"
 
 using namespace std;
 using namespace irr;
@@ -8,7 +10,12 @@ using namespace irrklang;
 
 #pragma comment(lib, "Irrlicht.lib")
 #pragma comment(lib, "IrrKlang.lib")
-
+//#pragma comment(lib, "LinearMath_vs2010.lib")
+//#pragma comment(lib, "Bullet3Collision_vs2010.lib")
+//#pragma comment(lib, "Bullet3Dynamics_vs2010.lib")
+#pragma comment(lib, "LinearMath_vs2010.lib")
+#pragma comment(lib, "BulletCollision_vs2010_debug.lib")
+#pragma comment(lib, "BulletDynamics_vs2010_debug.lib")
 
 //f32 bally = 400;
 //f32 ballx = 400;
@@ -29,6 +36,12 @@ int main()
 
 	//
 	irrklang::ISoundEngine* soundEngine = irrklang::createIrrKlangDevice();
+
+	btBroadphaseInterface* pPhysics = new btDbvtBroadphase();
+	//btDefaultCollisionConfiguration *CollisionConfiguration = new btDefaultCollisionConfiguration();
+
+
+
 
 	video::IVideoDriver* driver = device->getVideoDriver();
 	scene::ISceneManager* sceneManager = device->getSceneManager();
