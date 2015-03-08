@@ -19,8 +19,6 @@ core::vector2d<s32> ballDirection(1.0f,1.0f);
 
 int main()
 {
-	cout << "hello world\n";
-
 	IrrlichtDevice* device = createDevice(video::EDT_OPENGL,
 											core::dimension2d<u32>(800,600),
 											32,
